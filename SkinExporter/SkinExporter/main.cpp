@@ -35,9 +35,7 @@ bool exportSkins()
 
 		std::vector<BYTE> decodedData = base64_decode(minecraft_skin);
 		
-
-
-		std::string fileName{ "skins\\" + it.key() };
+		std::string fileName{ "skins\\" + static_cast<std::string>(it.value()["id"]) };
 		fileName += ".png";
 
 		if (!std::filesystem::is_directory("skins"))
